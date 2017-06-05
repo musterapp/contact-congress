@@ -3,9 +3,11 @@ contact_form:
   method: post
   action: ""
   steps:
-    - visit: "https://www.warner.senate.gov/public/index.cfm/contactpage#form_f9db6196-2dc7-4cda-8add-f8435a71318a"
+    - visit: "https://www.warner.senate.gov/public/index.cfm/contactpage"
     - find:
       - selector: "#field_B5EC1754-A087-456B-8ADB-7D3B19CF9997"
+    - wait:
+      - value: 3
     - fill_in:
         - name: field_DB042583-9E58-4B92-8979-A28769F48DB6
           selector: "#field_DB042583-9E58-4B92-8979-A28769F48DB6"
