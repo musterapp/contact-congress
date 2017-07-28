@@ -116,9 +116,10 @@ contact_form:
             - Veterans
     - javascript:
         - value: document.querySelector("#field_D5D7CF5F-83B7-413E-95C8-00E103AECCD0").value = document.querySelector("#field_D5D7CF5F-83B7-413E-95C8-00E103AECCD0").value.replace(/"/g, '');
-    - click_on:
-        - value: Submit
-          selector: input.btn.btn-primary
+    - recaptcha:
+        - value: true
+    - javascript:
+        - value: document.querySelector("input.btn.btn-primary").click();
   success:
     headers:
       status: 200

@@ -16,6 +16,8 @@ contact_form:
             Media Inquiries: media_inquires
             Request help with a federal agency: federal_agency
             Request a flag to be flown over the Capitol: flag
+    - find:
+        - selector: "#fname"                
     - fill_in:
         - name: fname
           selector: "#fname"
@@ -64,7 +66,6 @@ contact_form:
           required: true
           options:
             Abortion/Reproductive Rights: Abortion
-            Afghanistan/Iraq: Afghanistan
             Agriculture: Agriculture
             Animal Rights: Animal Rights
             Arts and Humanities: Arts and Humanities
@@ -78,9 +79,7 @@ contact_form:
             Education: Education
             Elections and Congressional Affairs: Elections and Congressional Affairs
             Energy: Energy
-            Environment and Public Works: Environment and Public Works
             Foreign Affairs: Foreign Affairs
-            Government Shutdown: Government Shutdown
             Guns: Guns
             Health Care: Health Care
             Housing: Housing
@@ -103,13 +102,13 @@ contact_form:
             Trade: Trade
             Transportation: Transportation
             Veterans: Veterans
+    - javascript:
+        - value: document.querySelector("#message").value = document.querySelector("#message").value.replace(/"/g, '');            
     - click_on:
         - value: Send
           selector: "#side-search-btn"
     - javascript:
-        - value: document.querySelector("#message").value = document.querySelector("#message").value.replace(/"/g, '');
-    - javascript:
-        - value: "document.querySelector('#side-search-btn').click();"
+        - value: "document.querySelector('#side-search-btn') && document.querySelector('#side-search-btn').click();"
     - find:
         - selector: "h2"
           value: "Thank You"
