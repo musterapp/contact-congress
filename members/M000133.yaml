@@ -4,6 +4,8 @@ contact_form:
   action: /contact
   steps:
     - visit: "http://www.markey.senate.gov/contact"
+    - javascript:
+      - value: "Array.prototype.forEach.call(document.querySelectorAll('style,[rel=\"stylesheet\"],[type=\"text/css\"]'), function(element){ try{ element.parentNode.removeChild(element) } catch(err){} });"
     - select:
       - name: issue
         selector: "#issue"
@@ -182,6 +184,10 @@ contact_form:
         - value: 1
     - javascript:
         - value: document.querySelector("#message").value = document.querySelector("#message").value.replace(/"/g, '');
+    - javascript:
+        - value: document.querySelector("#side-search-btn").disabled = false;
+    - recaptcha:
+        - value: true
     - click_on:
         - value: Send
           selector: "#side-search-btn"
