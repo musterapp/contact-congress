@@ -5,6 +5,10 @@ contact_form:
   steps:
     - visit: "http://www.paul.senate.gov/connect/email-rand"
     - fill_in:
+        - name: prefix
+          selector: "#edit-prefix"
+          value: $NAME_PREFIX
+          required: true
         - name: first
           selector: "#edit-first"
           value: $NAME_FIRST
@@ -57,7 +61,6 @@ contact_form:
             Budget: "BUD"
             Census: "CEN"
             Constitutional Issues: "CONS"
-            Courts and Judges: "JUD"
             Crime &amp; Law Enforcement: "CRI"
             Defense and Armed Services: "DEF"
             Economic Development: "ECO"
@@ -84,7 +87,6 @@ contact_form:
             Second Amendment: "GUN"
             Small Business: "SMB"
             Social Security: "SSEC"
-            Special Letter: "SPEC"
             Taxes: "TAX"
             Telecommunications: "TEL"
             Trade and Commerce: "TRADE"
